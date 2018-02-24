@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+	<form action="" method="post">
+	<div class="row">
+	{% for movie in movies %}
+  		<div class="col-sm-6 col-md-4">
+    		<div class="thumbnail">
+      			<img src={{ movie.poster }} alt="...">
+      			<div class="caption">
+        			<h3>{{ movie.title }}</h3>
+        			<p>Plot: {{ movie.plot[:100] }}<br></p>
+        			<p>Genre: {{ movie.genre }}<br></p>
+        			<p>Actors: {{ movie.actor }}</p>
+        			
+        				<p>
+        				<input type="radio" class="btn btn-default" name="submit" value="Like">Like
+						<input type="radio" class="btn btn-default" name="submit" value="Dislike">Dislike
+						</p>
+					
+      			</div>
+    		</div>
+  		</div>
+  	{% endfor %}
+	</div>
+	  	<p><input type="submit" class="btn btn-default" name="submit" value="Dinkan"></p>
+  		</form>
+</div>
+		
+{% endblock %}

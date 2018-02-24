@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+<div class="jumbotron">
+  <h1>Hello, {{ current_user.username}}! <br> Welcome to THM Movie Recommender System</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="{{ url_for('movies', page_num=1) }}" role="button">Explore movies</a></p>
+   <p><a class="btn btn-primary btn-lg" href="{{ url_for('coldstart') }}" role="button">Coldstart</a></p>
+</div>
+</div>
+
+{% endblock %}
+
+
