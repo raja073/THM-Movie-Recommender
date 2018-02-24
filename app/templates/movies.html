@@ -7,10 +7,10 @@
 	{% for movie in movies.items %}
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src={{ movie.poster }} alt="...">
+      <img src={{ movie.poster }} alt="..." height="100">
       <div class="caption">
         <h3>{{ movie.title }}</h3>
-        <p>Plot: {{ movie.plot[:160] }}<br></p>
+        <p>Plot: {{ movie.plot[:160] }}<br></p> 
         <p>Genre: {{ movie.genre }}<br></p>
         <p>Actors: {{ movie.actor }}</p>
         <form action="{{ url_for('movies', page_num=movies.page, imdb_id=movie.imdb_id) }}" method="post">
